@@ -22,12 +22,19 @@ router.get('/getId', (req, res, next) => {
     });
 });
 
-// http://localhost:3000/api-agenda/contato-dao/create?id=22
+// http://localhost:3000/api-agenda/contato-dao/create
 router.post('/create', (req, res, next) => {
     const {nome, fone, email} = req.body;
     const contato = {nome, fone, email}
     res.status(201).send({
-        response : 'Contato criado >> ' + contato 
+        response : 'Contato criado >> ', 'Dados do contato: ': contato 
+    });
+});
+
+// http://localhost:3000/api-agenda/contato-dao/getAll
+router.get('/getAll', (req, res, next) => {
+    res.status(200).send({
+        response : 'Contatos encontrados'
     });
 });
 
