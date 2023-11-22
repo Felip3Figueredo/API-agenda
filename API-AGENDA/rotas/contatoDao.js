@@ -22,5 +22,14 @@ router.get('/getId', (req, res, next) => {
     });
 });
 
+// http://localhost:3000/api-agenda/contato-dao/create?id=22
+router.post('/create', (req, res, next) => {
+    const {nome, fone, email} = req.body;
+    const contato = {nome, fone, email}
+    res.status(201).send({
+        response : 'Contato criado >> ' + contato 
+    });
+});
+
 // EXPORTAR O MÓDULO PARA USO
 module.exports = router;
