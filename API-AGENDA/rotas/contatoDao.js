@@ -47,5 +47,14 @@ router.post('/update', (req, res, next) => {
     });
 });
 
+// http://localhost:3000/api-agenda/contato-dao/delete
+router.post('/delete', (req, res, next) => {
+    const {id} = req.body;
+    const contato = {id}
+    res.status(201).send({
+        response : 'Contato criado >> ', 'Dados do contato: ': contato 
+    });
+});
+
 // EXPORTAR O MÓDULO PARA USO
 module.exports = router;
